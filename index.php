@@ -10,13 +10,12 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
+                    POSTS
+                    <small>stuff and things</small>
                 </h1>
 
                 <!-- First Blog Post -->
                 <?php 
-
                     $query = "SELECT * FROM posts";
                     $select_all_posts_query = mysqli_query($connection, $query);
                         while($row = mysqli_fetch_assoc($select_all_posts_query)){
@@ -37,18 +36,11 @@
                                 <p>{$post_content}</p>
                                 <a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-right'></span></a>
                                 <hr>";
-
                         }
                 ?>
-
-                
-                
             </div>
-
            <?php include 'includes/sidebar.php'; ?>
-
         </div>
-       <!-- /.row -->
         <hr>
 <?php include 'includes/footer.php'; ?>
 
