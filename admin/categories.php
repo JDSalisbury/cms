@@ -22,8 +22,7 @@
 
 
                         <div class="col-xs-6">
-                            
-                            <?php 
+                        <?php 
                                 if(isset($_POST['submit'])){
                                     
                                     $cat_title = $_POST['cat_title'];
@@ -53,34 +52,16 @@
                                 </div>
                             </form>
 
-                            <?php
-                                //edit a cat
-                                
-                                if(isset($_GET['edit'])){
-                                    $the_cat_id = $_GET['edit'];
 
-                                $query = "SELECT * FROM categories WHERE cat_id = $the_cat_id ";
-                                $edit_query = mysqli_query($connection, $query);
-                                
-                                    while($row = mysqli_fetch_assoc($edit_query)){
-                                        $cat_title = $row["cat_title"];
-                                        $cat_ID = $row["cat_id"];
-                                        ?>
-                                            <form action='' method='POST'>
-                                                <div class='form-group'>
-                                                    <label for='cat_title'>EDIT TITLE</label>
-                                                    <input class='form-control' type='text' name='cat_title' value='<?php if(isset($cat_title)) {echo $cat_title;} ?>'>
-                                                </div>
-                                                <div class='form-group'>
-                                                    <input class='btn btn-primary' type='submit' name='submit' value='UPDATE CATEGORY' >
-                                                </div>
-                                            </form>
-                                        <?php
-                                    }           
+                            <?php ; 
+                            
+                                if(isset($_GET['edit'])) {
+                                    $cat_id = $_GET['edit'];
+
+                                    include 'includes/update_cat.php';  
                                 }
-                                ?>
 
-
+                            ?>
 
                         </div>
 
@@ -119,8 +100,6 @@
                                     ?>
                                 </tbody>
                             </table>
-
-
                         </div>
                         
 
