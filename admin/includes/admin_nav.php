@@ -47,7 +47,7 @@
                                 <a href="#">ADD</a>
                             </li>
                             <li>
-                                <a href="#">VIEW</a>
+                                <a href="posts.php">VIEW</a>
                             </li>
                         </ul>
                     </li>
