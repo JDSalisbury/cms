@@ -1,11 +1,11 @@
 
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/admin_header.php'; ?>
     <div id="wrapper">
 
 
 
         <!-- Navigation -->
-        <?php include 'includes/nav.php'; ?>
+        <?php include 'includes/admin_nav.php'; ?>
 
 
         <div id="page-wrapper">
@@ -42,10 +42,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td> space holder</td>
-                                    </tr>
+                                    <?php
+                                        $query = "SELECT * FROM categories";
+                                        $select_all_categories_for_admin_query = mysqli_query($connection, $query);  
+                                        while($row = mysqli_fetch_assoc($select_all_categories_for_admin_query)){
+                                            $cat_title = $row["cat_title"];
+                                            $cat_ID = $row["cat_id"];
+                                                echo "<tr>";
+                                                echo "<td>{$cat_ID}</td>";
+                                                echo "<td>{$cat_title}</td>";
+                                                echo "</tr>";
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
 
@@ -66,4 +74,4 @@
 
     </div>
     <!-- /#wrapper -->
-<?php include 'includes/footer.php'; ?>
+<?php include 'includes/admin_footer.php'; ?>
