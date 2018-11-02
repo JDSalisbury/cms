@@ -53,7 +53,7 @@
                     </li>
                     
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i>CATEGORIES</a>
+                        <a href="categories.php"><i class="fa fa-fw fa-desktop"></i>CATEGORIES</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> USERS <i class="fa fa-fw fa-caret-down"></i></a>

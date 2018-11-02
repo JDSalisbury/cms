@@ -17,7 +17,9 @@
                         <h1 class="page-header">
                             ADMIN PAGE
                             <small>for administration.</small>
+
                         </h1>
+                            <?php if($connection) echo "connected"; ?>
                         
                     </div>
                 </div>
