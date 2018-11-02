@@ -1,2 +1,2 @@
-# CMS site in PHP
+# <p style="text-align: center;">CMS site in PHP
 ------
