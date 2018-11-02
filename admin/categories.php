@@ -66,14 +66,27 @@
                                 </thead>
                                 <tbody>
                                     <?php
+                                        //find all cats query
                                         $query = "SELECT * FROM categories";
                                         $select_all_categories_for_admin_query = mysqli_query($connection, $query);  
+
+                                        //delete a cat by ID query
+                                        if(isset($_GET['delete'])){
+                                            $the_cat_id = $_GET['delete'];
+                                        $query = "DELETE FROM categories WHERE cat_id = {$the_cat_id} ";
+                                        $delete_query = mysqli_query($connection, $query);
+                                        header("Location: categories.php");
+
+                                        }
+                                        
+
                                         while($row = mysqli_fetch_assoc($select_all_categories_for_admin_query)){
                                             $cat_title = $row["cat_title"];
                                             $cat_ID = $row["cat_id"];
                                                 echo "<tr>";
                                                 echo "<td>{$cat_ID}</td>";
                                                 echo "<td>{$cat_title}</td>";
+                                                echo "<td><a href='categories.php?delete={$cat_ID}'><i class='fa fa-fw fa-trash' aria-hidden='true'></i></a></td>";
                                                 echo "</tr>";
                                         }
                                     ?>

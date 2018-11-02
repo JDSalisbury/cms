@@ -67,7 +67,7 @@
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i>COMMENTS</a>
+                        <a href="blank-page.html"><i class="fa fa-fw fa-comments-o"></i>COMMENTS</a>
                     </li>
                     
                 </ul>
