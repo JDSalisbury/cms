@@ -13,4 +13,30 @@ function navBarCategoriesDisplay(){
 
 }
 
+
+function tagSearchBar(){
+    global $connection;
+
+    if(isset($_POST['search'])){
+
+        $search = $_POST['search'];
+    
+        $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%' ";
+    
+        $search_query = mysqli_query($connection, $query);
+    
+        if(!$search_query) {
+            die("query failed" . mysqli_error($connection));
+        }
+    
+        $count = mysqli_num_rows($search_query);
+        global $numOfItemsFound;
+        if($count == 1){
+            $numOfItemsFound = $count . " item found";
+        } else {
+            $numOfItemsFound = $count . " items found";
+        }
+    }
+}
+
 ?>

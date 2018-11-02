@@ -1,10 +1,7 @@
  
  <?php
 
-if(isset($_POST['search'])){
-
-    echo $search = $_POST['search'];
-}
+tagSearchBar();
 
  ?>
 
@@ -16,7 +13,7 @@ if(isset($_POST['search'])){
 
 <!-- Blog Search Well -->
 <div class="well">
-    <h4>Blog Search</h4>
+    <h4>Blog Tag Search</h4>
     <form action="" method="POST">
     <div class="input-group">
         <input name="search" type="text" class="form-control">
@@ -25,7 +22,9 @@ if(isset($_POST['search'])){
                 <span class="glyphicon glyphicon-search"></span>
         </button>
         </span>
+        
     </div>
+        <p><?php echo $numOfItemsFound ?></p>
     </form>
     <!-- /.input-group -->
 </div>
