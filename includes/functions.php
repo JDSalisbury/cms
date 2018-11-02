@@ -16,6 +16,7 @@ function navBarCategoriesDisplay(){
 
 function tagSearchBar(){
     global $connection;
+    global $search_query;
 
     if(isset($_POST['search'])){
 
@@ -29,13 +30,20 @@ function tagSearchBar(){
             die("query failed" . mysqli_error($connection));
         }
     
+    }
+    if(!$search_query == null){
         $count = mysqli_num_rows($search_query);
-        global $numOfItemsFound;
-        if($count == 1){
-            $numOfItemsFound = $count . " item found";
-        } else {
-            $numOfItemsFound = $count . " items found";
-        }
+    }else {
+        $count = -1;
+    }
+    global $numOfItemsFound;
+    if($count == 1){
+        $numOfItemsFound = $count . " item found";
+    } elseif($count == -1) {
+        $numOfItemsFound = "";
+    } else{ 
+
+        $numOfItemsFound = $count . " items found";
     }
 }
 
