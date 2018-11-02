@@ -1,6 +1,9 @@
 <?php include 'db.php';?>
 <?php
 
+
+
+
 function navBarCategoriesDisplay(){
     global $connection;
     $query = "SELECT * FROM categories";
@@ -12,6 +15,9 @@ function navBarCategoriesDisplay(){
     }
 
 }
+
+
+
 
 
 function tagSearchBar(){
@@ -48,6 +54,9 @@ function tagSearchBar(){
 }
 
 
+
+
+
 function displaySetupForPost($row){
     $post_title = $row["post_title"];
     $post_author = $row["post_author"];
@@ -67,5 +76,9 @@ function displaySetupForPost($row){
         <hr>";
 
 }
+
+
+
+
 
 ?>

@@ -21,8 +21,10 @@
                     <?php
                     
                         navBarCategoriesDisplay();
-                    
-                    ?>    
+                        echo "<li><a href='admin'>ADMIN</a></li>";
+
+                    ?>  
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
