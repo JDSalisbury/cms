@@ -94,7 +94,7 @@
                                                 echo "<tr>";
                                                 echo "<td>{$cat_ID}</td>";
                                                 echo "<td>{$cat_title}</td>";
-                                                echo "<td><a href='categories.php?delete={$cat_ID}'><i class='fa fa-fw fa-trash' aria-hidden='true'></i></a><a href='categories.php?edit={$cat_ID}'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a></td>";
+                                                echo "<td><a href='categories.php?delete={$cat_ID}'><i class='fa fa-fw fa-trash fa-lg' aria-hidden='true'></i></a><a href='categories.php?edit={$cat_ID}'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></a></td>";
                                                 echo "</tr>";
                                         }
                                     ?>
