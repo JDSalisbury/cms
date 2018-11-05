@@ -31,8 +31,23 @@
     </div>
 
     <div class="form-group">
-        <label for="post_category_id">Post Category ID</label>
-        <input value="<?php echo $post_category_id; ?>" type="text" class="form-control" name="post_category_id">
+        
+        <select name="post_category" id="post_category">
+            <?php
+
+                $query = "SELECT * FROM categories";
+                $select_categories = mysqli_query($connection, $query);
+                            
+                while($row = mysqli_fetch_assoc($select_categories)){
+                    $cat_title = $row["cat_title"];
+                    $cat_ID = $row["cat_id"];
+
+                    echo "<option value='{$cat_ID}'>{$cat_title}</option>";
+                }
+
+            ?>
+        </select>
+        
     </div>
 
     <div class="form-group">
@@ -48,6 +63,7 @@
     <div class="form-group">
         <label for="image">Post Image</label>
         <input type="file" name="image">
+        <img width="100" src="../images/<?php echo $post_image; ?>" alt="">
     </div>
 
     <div class="form-group">
