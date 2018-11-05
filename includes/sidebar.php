@@ -40,8 +40,8 @@ $query = "SELECT * FROM categories";
               <?php
                 while($row = mysqli_fetch_assoc($select_all_categories_for_sidebar_query)){
                     $cat_title = $row["cat_title"];
-             
-                    echo "<li><a href='#'>{$cat_title}</a></li>";
+                    $cat_id = $row["cat_id"];
+                    echo "<li><a href='category.php?c_id=$cat_id'>{$cat_title}</a></li>";
                  }
               ?>
             </ul>

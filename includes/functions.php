@@ -63,7 +63,7 @@ function displaySetupForPost($row){
     $post_author = $row["post_author"];
     $post_date = $row["post_date"];
     $post_image = $row["post_image"];
-    $post_content = $row["post_content"];
+    $post_content = substr($row["post_content"], 0, 200);
     
     echo "<h2><a href='post.php?p_id=$post_id'>{$post_title}</a></h2>
 
