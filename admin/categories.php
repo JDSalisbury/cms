@@ -71,6 +71,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>CATEGORY TITLE</th>
+                                        <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>

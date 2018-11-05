@@ -10,7 +10,7 @@
                                     <th>TAGS</th>
                                     <th>COMMENTS</th>
                                     <th>DATE</th>
-
+                                    <th> </th>
                                 </tr>
                             </thead>
 
