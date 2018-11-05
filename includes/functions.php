@@ -64,10 +64,12 @@ function displaySetupForPost($row){
     $post_date = $row["post_date"];
     $post_image = $row["post_image"];
     $post_content = substr($row["post_content"], 0, 200);
+
+    
     
     echo "<h2><a href='post.php?p_id=$post_id'>{$post_title}</a></h2>
 
-        <p class='lead'>by <a href='#'>{$post_author}</a></p>
+        <p class='lead'>by <a href='author.php?author=$post_author'>{$post_author}</a></p>
         <p><span class='glyphicon glyphicon-time'></span>{$post_date}</p>
         <hr>
         <img class='img-responsive' src='images/{$post_image}' alt=''>
