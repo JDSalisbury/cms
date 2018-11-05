@@ -44,7 +44,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-arrows-v"></i> POSTS <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="posts" class="collapse">
                             <li>
-                                <a href="#">ADD</a>
+                                <a href="posts.php?source=add_post">ADD</a>
                             </li>
                             <li>
                                 <a href="posts.php">VIEW</a>
