@@ -42,7 +42,7 @@
                                                 <td>$post_tags</td>
                                                 <td>$post_comment_count</td>
                                                 <td>$post_date</td>
-                                                <td><a href='posts.php?delete={$post_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a></td>
+                                                <td><a href='posts.php?delete={$post_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a><a href='posts.php?source=edit_post&p_id={$post_id}'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></td>
                                             </tr>";
                                     }        
                                             
