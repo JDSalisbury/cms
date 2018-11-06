@@ -44,7 +44,7 @@
                                                 <td>$user_email</td>
                                                 <td><img src='../images/$user_image' height= '50'></td>
                                                 <td>$user_role</td>
-                                                <td>$lvl  <a href='users.php?delete={$user_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a></td>
+                                                <td>$lvl  <a href='users.php?delete={$user_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a>  <a href='users.php?source=edit_user&u_id={$user_id}'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></td>
                                             </tr>";
                                     }      
                                     

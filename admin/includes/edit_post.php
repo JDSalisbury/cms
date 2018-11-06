@@ -35,7 +35,7 @@
 
         if(empty($post_image)) {
             $image_query = "SELECT * from posts WHERE post_id = $post_to_edit_id";
-            $select_image = mysqli_query($connection, $query);
+            $select_image = mysqli_query($connection, $image_query);
             while($row = mysqli_fetch_array($select_image)) {
                 $post_image = $row['post_image'];
             }
