@@ -21,8 +21,8 @@
                             <tbody>
                                 <?php                                 
                                     $query = "SELECT * FROM comments ";
-                                    $posts_query = mysqli_query($connection, $query);                                                            
-                                    while($row = mysqli_fetch_assoc($posts_query)){
+                                    $comments_query = mysqli_query($connection, $query);                                                            
+                                    while($row = mysqli_fetch_assoc($comments_query)){
                                         $comment_id = $row["comment_id"];
                                         $comment_post_id = $row["comment_post_id"];
                                         $comment_author = $row["comment_author"];
@@ -49,7 +49,7 @@
                                                 <td>$comment_status</td>
                                                 <td>$comment_post_id</td>
                                                 <td>$comment_date</td>
-                                                <td>Approve</td>
+                                                <td><a href='posts.php?delete={$comment_id}'><i class='fa fa-check-square-o fa-2x' aria-hidden='true'></i></a></td>
                                                 <td>Unapprove</td>
                                                 <td><a href='posts.php?delete={$comment_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a><a href='posts.php?source=edit_post&p_id={$comment_id}'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></td>
                                             </tr>";
