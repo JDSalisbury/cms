@@ -11,7 +11,7 @@
                                     <th>APPROVE</th>
                                     <th>UNAPPROVE</th>
                                     <th>DELETE</th>
-                                    <th> </th>
+                                   
                                 </tr>
                             </thead>
 
@@ -49,9 +49,9 @@
                                                 <td>$comment_status</td>
                                                 <td><a href='../post.php?p_id=$comment_post_id'>{$post_title}</a></td>
                                                 <td>$comment_date</td>
-                                                <td><a href='posts.php?delete={$comment_id}'><i class='fa fa-check-square-o fa-2x' aria-hidden='true'></i></a></td>
+                                                <td><a href='comments.php?delete={$comment_id}'><i class='fa fa-check-square-o fa-2x' aria-hidden='true'></i></a></td>
                                                 <td>Unapprove</td>
-                                                <td><a href='posts.php?delete={$comment_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a><a href='posts.php?source=edit_post&p_id={$comment_id}'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></td>
+                                                <td><a href='comments.php?delete={$comment_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a></td>
                                             </tr>";
                                     }        
                                             
@@ -63,12 +63,13 @@
 
 <?php
 
-    // if(isset($_GET['delete'])){
-    //     $the_post_id = $_GET['delete'];
+    if(isset($_GET['delete'])){
+        $the_comment_id = $_GET['delete'];
 
-    // $query = "DELETE FROM posts WHERE post_id = {$the_post_id}";
-    // $delete_query = mysqli_query($connection, $query);
-    // }
+    $query = "DELETE FROM comments WHERE comment_id = {$the_comment_id}";
+    $delete_query = mysqli_query($connection, $query);
+    header("Location: comments.php");
+    }
 
 
 ?>
