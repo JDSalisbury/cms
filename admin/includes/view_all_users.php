@@ -29,6 +29,11 @@
                                         $user_image = $row["user_image"];
                                         $user_role = $row["user_role"];
                                     
+                                        if($user_role == "admin"){
+                                            $lvl = "<a href='users.php?change_to_sub={$user_id}'><i class='fa fa-arrow-circle-down fa-2x' aria-hidden='true'></i></a>";
+                                        } else {
+                                            $lvl = "<a href='users.php?change_to_admin={$user_id}'><i class='fa fa-arrow-circle-up fa-2x' aria-hidden='true'></i></a>";
+                                        }
 
                                         echo"
                                             <tr>
@@ -39,7 +44,7 @@
                                                 <td>$user_email</td>
                                                 <td><img src='../images/$user_image' height= '50'></td>
                                                 <td>$user_role</td>
-                                                <td><a href='users.php?delete={$user_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a></td>
+                                                <td>$lvl  <a href='users.php?delete={$user_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a></td>
                                             </tr>";
                                     }      
                                     
@@ -55,5 +60,27 @@
                         </table>
 
 <?php
+
+if(isset($_GET['change_to_admin'])){
+    $the_user_id = $_GET['change_to_admin'];
+
+$query = "UPDATE users SET user_role = 'admin' WHERE user_id = $the_user_id";
+$approve_query = mysqli_query($connection, $query);
+header("Location: users.php");
+}
+
+
+?>
+
+<?php
+
+if(isset($_GET['change_to_sub'])){
+    $the_user_id = $_GET['change_to_sub'];
+
+$query = "UPDATE users SET user_role = 'subscriber' WHERE user_id = $the_user_id ";
+$unapprove_query = mysqli_query($connection, $query);
+header("Location: users.php");
+}
+
 
 ?>
