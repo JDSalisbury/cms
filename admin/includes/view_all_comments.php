@@ -27,11 +27,11 @@
                                         $comment_post_id = $row["comment_post_id"];
                                         $comment_author = $row["comment_author"];
                                         $comment_email = $row["comment_email"];
-                                        $comment_content = $row["comment_content"];
+                                        $comment_content = substr($row["comment_content"], 0, 100);
                                         $comment_status = $row["comment_status"];
                                         $comment_date = $row["comment_date"];
                                         
-
+                                        
 
                                         $query = "SELECT * FROM posts WHERE post_id = $comment_post_id ";
                                         $select_post_id_query = mysqli_query($connection, $query);
@@ -44,7 +44,7 @@
                                             <tr>
                                                 <td>$comment_id</td>
                                                 <td>$comment_author</td>
-                                                <td>$comment_content</td>
+                                                <td>$comment_content...</td>
                                                 <td>$comment_email</td>
                                                 <td>$comment_status</td>
                                                 <td><a href='../post.php?p_id=$comment_post_id'>{$post_title}</a></td>

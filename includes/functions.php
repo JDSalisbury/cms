@@ -74,7 +74,7 @@ function displaySetupForPost($row){
         <hr>
         <img class='img-responsive' src='images/{$post_image}' alt=''>
         <hr>
-        <p>{$post_content}</p>
+        <p>{$post_content}...</p>
         <hr>";
 
 }
