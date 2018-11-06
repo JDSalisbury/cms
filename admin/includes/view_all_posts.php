@@ -47,7 +47,7 @@
                                                 <td>$post_title</td>
                                                 <td>$cat_title</td>
                                                 <td>$post_status</td>
-                                                <td><img src='../images/$post_image' class='img-responsive'></td>
+                                                <td><img src='../images/$post_image' height= '50'></td>
                                                 <td>$post_tags</td>
                                                 <td>$post_comment_count</td>
                                                 <td>$post_date</td>
