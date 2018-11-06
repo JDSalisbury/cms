@@ -33,12 +33,12 @@
                                         
 
 
-                                        // $query = "SELECT * FROM categories WHERE cat_id = $post_category_id ";
-                                        // $cat_query = mysqli_query($connection, $query);
+                                        $query = "SELECT * FROM posts WHERE post_id = $comment_post_id ";
+                                        $select_post_id_query = mysqli_query($connection, $query);
                                     
-                                        // while($row = mysqli_fetch_assoc($cat_query)){
-                                        //     $cat_title = $row["cat_title"];
-                                        // }
+                                        while($row = mysqli_fetch_assoc($select_post_id_query)){
+                                            $post_title = $row["post_title"];
+                                        }
 
                                         echo"
                                             <tr>
@@ -47,7 +47,7 @@
                                                 <td>$comment_content</td>
                                                 <td>$comment_email</td>
                                                 <td>$comment_status</td>
-                                                <td>$comment_post_id</td>
+                                                <td><a href='../post.php?p_id=$comment_post_id'>{$post_title}</a></td>
                                                 <td>$comment_date</td>
                                                 <td><a href='posts.php?delete={$comment_id}'><i class='fa fa-check-square-o fa-2x' aria-hidden='true'></i></a></td>
                                                 <td>Unapprove</td>
