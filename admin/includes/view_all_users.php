@@ -37,7 +37,7 @@
                                                 <td>$user_firstname</td>
                                                 <td>$user_lastname</td>
                                                 <td>$user_email</td>
-                                                <td>$user_image</td>
+                                                <td><img src='../images/$user_image' height= '50'></td>
                                                 <td>$user_role</td>
                                                 <td><a href='users.php?delete={$user_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a></td>
                                             </tr>";
