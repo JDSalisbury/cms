@@ -76,7 +76,7 @@ if(isset($_POST['create_post'])){
 
     <div class="form-group">
         <label for="post_content">Post Content</label>
-        <textarea class="form-control" name="post_content" cols="30" rows="10"></textarea>
+        <textarea id="editor" class="form-control" name="post_content" cols="50" rows="50"></textarea>
     </div>
 
     <div class="form-group">
