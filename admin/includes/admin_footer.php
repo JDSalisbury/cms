@@ -54,7 +54,7 @@
         var chartDiv = document.getElementById('chart_div');
 
         var data = google.visualization.arrayToDataTable([
-          ['Data', 'Main', 'Other'],
+          ['Data', '*/_', '_/*'],
           <?php
                 $element_data = ['Published/Draft', 'Approved/Unapproved', 'Admin/Subs', 'Categories'];
                 $element_main = [$post_published_count,  $comment_approved_count, $admin_count, $category_count];

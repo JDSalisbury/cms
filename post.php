@@ -6,15 +6,18 @@
     <div class="container">
         <div class="row">
         <?php
-             if(isset($_GET['p_id'])){
+           if(isset($_GET['p_id'])){
                 $post_to_display_id = $_GET['p_id'];
-            }
+        
 
-            $query = "SELECT * FROM posts WHERE post_id = $post_to_display_id";
-            $select_all_posts_query = mysqli_query($connection, $query);
-            while($row = mysqli_fetch_assoc($select_all_posts_query)){
-                $post_title = $row["post_title"];
-                $post_author = $row["post_author"];
+                $query = "SELECT * FROM posts WHERE post_id = $post_to_display_id";
+                $select_all_posts_query = mysqli_query($connection, $query);
+                while($row = mysqli_fetch_assoc($select_all_posts_query)){
+                    $post_title = $row["post_title"];
+                    $post_author = $row["post_author"];
+                }
+            }else{
+                header("Location: index.php");
             }
         ?>
 
