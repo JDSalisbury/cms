@@ -24,7 +24,9 @@ if(isset($_POST['create_post'])){
     if(!$create_post_query) {
         die("Query Failed " . mysqli_error($connection));
     }
-    echo "Post Created: " . " " . " <a href='posts.php'>View Posts</a>";
+
+    $the_post_id = mysqli_insert_id($connection);
+    echo "Post Created: " . " " . " <a href='posts.php'>View Posts: </a><a href='../post.php?p_id={$the_post_id}'>View Post</a>";
 }
 
 ?>
