@@ -4,13 +4,10 @@ if(isset($_POST['create_user'])){
     $user_lastname = $_POST['user_lastname'];
     $user_email = $_POST['user_email'];
     $username = $_POST['username'];
-
     $user_image = $_FILES['image']['name'];
     $user_image_temp = $_FILES['image']['tmp_name'];
-
     $user_password = $_POST['user_password'];
     $user_role = $_POST['user_role'];
- 
 
     move_uploaded_file($user_image_temp, "../images/$user_image");
 
@@ -24,11 +21,8 @@ if(isset($_POST['create_user'])){
     }
 
     echo "User Created: " . " " . " <a href='users.php'>View Users</a>";
-
 }
-
 ?>
-
 
 <form action="" method="POST" enctype="multipart/form-data">
 

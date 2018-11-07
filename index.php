@@ -1,20 +1,15 @@
 
 <?php include 'includes/header.php'; ?>
-    
     <?php include 'includes/nav.php'; ?>
 
-    <!-- Page Content -->
     <div class="container">
         <div class="row">
-
-            <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <h1 class="page-header">
                     POSTS
                     <small>stuff and things</small>
                 </h1>
 
-                <!-- First Blog Post -->
                 <?php
 
                     $query = "SELECT * FROM posts";

@@ -1,8 +1,6 @@
 <?php include 'includes/header.php'; ?>
-    
     <?php include 'includes/nav.php'; ?>
 
-    <!-- Page Content -->
     <div class="container">
         <div class="row">
         <?php
@@ -23,16 +21,13 @@
             }
         ?>
 
-            <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <h1 class="page-header">
                     <?php echo $post_title?>
                     <small>by <?php echo "<a href='author.php?author=$post_author'>{$post_author}</a>"?> </small>
                 </h1>
 
-                <!-- First Blog Post -->
                 <?php 
-
                         $query = "SELECT * FROM posts WHERE post_id = $post_to_display_id";
                         $select_all_posts_query = mysqli_query($connection, $query);
                         while($row = mysqli_fetch_assoc($select_all_posts_query)){
