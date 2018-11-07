@@ -36,13 +36,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>DASHBOARD</a>
+                        <a href="index.php"><i class="fa fa-fw fa-bar-chart"></i>DASHBOARD</a>
                     </li>
                     <li>
-                        <a href="profile.php"><i class="fa fa-fw fa-wrench"></i>PROFILE</a>
+                        <a href="profile.php"><i class="fa fa-fw fa-user"></i>PROFILE</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-arrows-v"></i> POSTS <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-file-text-o"></i> POSTS <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="posts" class="collapse">
                             <li>
                                 <a href="posts.php?source=add_post">ADD</a>
@@ -54,10 +54,10 @@
                     </li>
                     
                     <li>
-                        <a href="categories.php"><i class="fa fa-fw fa-desktop"></i>CATEGORIES</a>
+                        <a href="categories.php"><i class="fa fa-fw fa-list"></i>CATEGORIES</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> USERS <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-users"></i> USERS <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
                             <li>
                                 <a href="users.php?source=add_user">ADD</a>

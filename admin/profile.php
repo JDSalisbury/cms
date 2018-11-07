@@ -30,8 +30,8 @@
                         
                     <?php
                         if(isset($_SESSION['user_id'])){
-                                
-                            $query = "SELECT * FROM users WHERE user_id = '$admin_id'";
+                            $admin_id = $_SESSION['user_id'];
+                            $query = "SELECT * FROM users WHERE user_id = '{$admin_id}'";
                                 $select_user_by_id = mysqli_query($connection, $query);                                                            
                                 while($row = mysqli_fetch_assoc($select_user_by_id)){
                                     $user_id = $row["user_id"];
