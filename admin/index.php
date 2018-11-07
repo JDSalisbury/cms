@@ -24,6 +24,8 @@
                     </div>
                 </div>
                 <!-- /.row -->
+                <?php include 'includes/admin_dash.php'; ?>
+
             </div>
             <!-- /.container-fluid -->
         </div>
