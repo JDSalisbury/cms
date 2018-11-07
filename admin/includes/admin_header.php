@@ -2,11 +2,11 @@
 <?php include '../includes/db.php' ?>
 <?php session_start(); 
 
-    if(isset($_SESSION['user_role'])) {
-        if($_SESSION['user_role'] == 'subscriber') {
-            header("Location: ../index.php");
-        }
-    }
+    if(!isset($_SESSION['user_role'])) {
+        header("Location: ../index.php"); 
+    } elseif($_SESSION['user_role'] == 'subscriber') {
+        header("Location: ../index.php");
+    } 
 
 ?>
 
