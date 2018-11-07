@@ -31,6 +31,7 @@ if(isset($_POST['login'])){
     }
     
     if($username === $db_username && $password === $db_password){
+        $_SESSION['user_id'] = $db_id;
         $_SESSION['username'] = $db_username;
         $_SESSION['firstname'] = $db_user_firstname;
         $_SESSION['lastname'] = $db_user_lastname;
