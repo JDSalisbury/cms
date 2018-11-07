@@ -12,6 +12,7 @@
                             $query = "SELECT * FROM posts";
                             $select_all_posts = mysqli_query($connection, $query);
                             $post_count = mysqli_num_rows($select_all_posts);
+                            
                     
                         ?>
                         <div class='huge'><?php echo $post_count; ?></div>
@@ -40,6 +41,7 @@
                             $query = "SELECT * FROM comments";
                             $select_all_comments = mysqli_query($connection, $query);
                             $comment_count = mysqli_num_rows($select_all_comments);
+                            
                     
                         ?>
                         <div class='huge'><?php echo $comment_count; ?></div>
@@ -68,6 +70,7 @@
                             $query = "SELECT * FROM users";
                             $select_all_users = mysqli_query($connection, $query);
                             $user_count = mysqli_num_rows($select_all_users);
+                            
                     
                         ?>
                         <div class='huge'><?php echo $user_count; ?></div>
@@ -96,6 +99,7 @@
                             $query = "SELECT * FROM categories";
                             $select_all_categories = mysqli_query($connection, $query);
                             $category_count = mysqli_num_rows($select_all_categories);
+                            
                     
                         ?>
                         <div class='huge'><?php echo $category_count; ?></div>
@@ -112,4 +116,10 @@
             </a>
         </div>
     </div>
+</div>
+
+<div class="row">
+    <div id="chart_div" style="width: 'auto'; height: 500px;"></div>
+    <br><br>
+    <button class="btn btn-primary" id="change-chart">Change to Classic</button>
 </div>
