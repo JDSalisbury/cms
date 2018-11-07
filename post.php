@@ -8,7 +8,9 @@
         <?php
            if(isset($_GET['p_id'])){
                 $post_to_display_id = $_GET['p_id'];
-        
+                
+                $view_query = "UPDATE posts SET post_views_count = post_views_count + 1 WHERE post_id = $post_to_display_id ";
+                $send_query = mysqli_query($connection, $view_query);
 
                 $query = "SELECT * FROM posts WHERE post_id = $post_to_display_id";
                 $select_all_posts_query = mysqli_query($connection, $query);

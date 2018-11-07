@@ -9,6 +9,7 @@
                                     <th>IMAGE</th>
                                     <th>TAGS</th>
                                     <th>COMMENTS</th>
+                                    <th>VIEWS</th>
                                     <th>DATE</th>
                                     <th> </th>
                                 </tr>
@@ -31,6 +32,7 @@
                                         $post_comment_count = $row["post_comment_count"];
                                         $post_status = $row["post_status"];
                                         $post_category_id = $row["post_category_id"];
+                                        $post_views_count = $row["post_views_count"];
 
 
                                         $query = "SELECT * FROM categories WHERE cat_id = $post_category_id ";
@@ -56,8 +58,9 @@
                                                 <td><img src='../images/$post_image' height= '50'></td>
                                                 <td>$post_tags</td>
                                                 <td>$post_comment_count</td>
+                                                <td><a href='posts.php?reset={$post_id}'>{$post_views_count}</a></td>
                                                 <td>$post_date</td>
-                                                <td><a href='posts.php?delete={$post_id}'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></a><a href='posts.php?source=edit_post&p_id={$post_id}'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></td>
+                                                <td><a href='posts.php?delete={$post_id}'>  <i class='fa fa-trash-o fa-2x' aria-hidden='true'>  </i></a><a href='posts.php?source=edit_post&p_id={$post_id}'><i class='fa fa-pencil-square-o fa-lg' aria-hidden='true'></i></td>
                                             </tr>";
                                     }        
                                             
@@ -72,8 +75,17 @@
     if(isset($_GET['delete'])){
         $the_post_id = $_GET['delete'];
 
-    $query = "DELETE FROM posts WHERE post_id = {$the_post_id}";
+    $query = "DELETE FROM posts WHERE post_id =" . mysqli_real_escape_string($connection, $the_post_id) . " ";
     $delete_query = mysqli_query($connection, $query);
+    header("Location: posts.php");
+
+    }
+
+    if(isset($_GET['reset'])){
+        $the_post_id = $_GET['reset'];
+
+    $query = "UPDATE posts SET post_views_count = 0 WHERE post_id =" . mysqli_real_escape_string($connection, $the_post_id) . " ";
+    $reset_query = mysqli_query($connection, $query);
     header("Location: posts.php");
 
     }
