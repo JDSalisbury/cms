@@ -15,14 +15,7 @@
                 </h1>
 
                 <!-- First Blog Post -->
-                <?php
-
-                    $query = "SELECT * FROM posts";
-                    $find_count = mysqli_query($connection, $query);
-                    $post_count = mysqli_num_rows($find_count);
-
-
-
+                <?php 
                     $query = "SELECT * FROM posts WHERE post_status = 'Published' ";
                     $select_all_posts_query = mysqli_query($connection, $query);
                         while($row = mysqli_fetch_assoc($select_all_posts_query)){
