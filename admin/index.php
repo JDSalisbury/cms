@@ -16,7 +16,7 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             ADMIN PAGE
-                            <small>for administration.</small>
+                            <small>WELCOME <?php echo $_SESSION['username'] ?></small>
 
                         </h1>
                             <?php if($connection) echo "connected"; ?>
