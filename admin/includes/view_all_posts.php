@@ -40,13 +40,19 @@
                                             $cat_title = $row["cat_title"];
                                         }
 
+                                        if($post_status === 'Published') {
+                                            $status = "<a href='../post.php?p_id={$post_id}'>$post_status</a>";
+                                        } else {
+                                            $status = "<a href='posts.php?source=edit_post&p_id={$post_id}'>$post_status</a>";
+                                        }
+
                                         echo"
                                             <tr>
                                                 <td>$post_id</td>
                                                 <td>$post_author</td>
                                                 <td>$post_title</td>
                                                 <td>$cat_title</td>
-                                                <td>$post_status</td>
+                                                <td>$status</td>
                                                 <td><img src='../images/$post_image' height= '50'></td>
                                                 <td>$post_tags</td>
                                                 <td>$post_comment_count</td>
