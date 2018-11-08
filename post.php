@@ -17,14 +17,14 @@
                     $post_author = $row["post_author"];
                 }
             }else{
-                header("Location: index.php");
+                header("Location: /cms/index");
             }
         ?>
 
             <div class="col-md-8">
                 <h1 class="page-header">
                     <?php echo $post_title?>
-                    <small>by <?php echo "<a href='author.php?author=$post_author'>{$post_author}</a>"?> </small>
+                    <small>by <?php echo "<a href='/cms/author/$post_author'>{$post_author}</a>"?> </small>
                 </h1>
 
                 <?php 
@@ -42,7 +42,7 @@
                             echo "
                                 <p><span class='glyphicon glyphicon-time'></span>{$post_date}</p>
                                 <hr>
-                                <img class='img-responsive' src='images/{$post_image}' alt=''>
+                                <img class='img-responsive' src='/cms/images/{$post_image}' alt=''>
                                 <hr>
                                 <p>{$post_content}</p>
                                 

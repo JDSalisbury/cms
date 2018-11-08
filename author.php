@@ -35,10 +35,10 @@
                         
                             
                             
-                            echo "<h2><a href='post.php?p_id=$post_id'>{$post_title}</a></h2>
+                            echo "<h2><a href='/cms/post/$post_id'>{$post_title}</a></h2>
                                 <p><span class='glyphicon glyphicon-time'></span>{$post_date}</p>
                                 <hr>
-                                <img class='img-responsive' src='images/{$post_image}' alt=''>
+                                <img class='img-responsive' src='/cms/images/{$post_image}' alt=''>
                                 <hr>
                                 <p>{$post_content}</p>
                                 <hr>";

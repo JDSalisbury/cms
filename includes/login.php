@@ -39,7 +39,7 @@ if(isset($_POST['login'])){
         $_SESSION['user_image'] = $db_user_image;
         header("Location: ../admin");
     } else{
-        header("Location: ../index.php ");
+        header("Location: ../cms/index ");
     }
 
 
