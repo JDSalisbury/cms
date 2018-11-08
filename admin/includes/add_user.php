@@ -11,8 +11,19 @@ if(isset($_POST['create_user'])){
 
     move_uploaded_file($user_image_temp, "../images/$user_image");
 
+    $query = "SELECT randsalt FROM users";
+    $select_randsalt_query = mysqli_query($connection, $query);
+    
+    if(!$select_randsalt_query){
+        die("Query Failed" . mysqli_error($connection));
+    }
+
+    $row = mysqli_fetch_array($select_randsalt_query);
+    $salt = $row['randsalt'];
+    $hashed_password = crypt($user_password, $salt);
+
     $query = "INSERT INTO users(user_firstname, user_lastname, user_email, username, user_image, user_password, user_role) ";
-    $query .= "VALUES('{$user_firstname}', '{$user_lastname}', '{$user_email}', '{$username}', '{$user_image}', '{$user_password}', '{$user_role}' ) ";
+    $query .= "VALUES('{$user_firstname}', '{$user_lastname}', '{$user_email}', '{$username}', '{$user_image}', '{$hashed_password}', '{$user_role}' ) ";
 
     $create_user_query = mysqli_query($connection, $query);
 

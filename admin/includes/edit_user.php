@@ -39,13 +39,25 @@
             }
         }
 
+        $query = "SELECT randsalt FROM users";
+        $select_randsalt_query = mysqli_query($connection, $query);
+    
+        if(!$select_randsalt_query){
+            die("Query Failed" . mysqli_error($connection));
+        }
+
+        $row = mysqli_fetch_array($select_randsalt_query);
+        $salt = $row['randsalt'];
+        $hashed_password = crypt($user_password, $salt);
+    
+
         $query = "UPDATE users SET ";
         $query .="user_firstname = '{$user_firstname}', ";
         $query .="user_lastname = '{$user_lastname}', ";
         $query .="user_email = '{$user_email}', ";
         $query .="username = '{$username}', ";
         $query .="user_image = '{$user_image}', ";
-        $query .="user_password = '{$user_password}', ";
+        $query .="user_password = '{$hashed_password}', ";
         $query .="user_role = '{$user_role}' ";
         $query .="WHERE user_id = {$user_to_edit_id} ";
 
