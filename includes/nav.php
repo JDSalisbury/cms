@@ -22,6 +22,7 @@
                     
                         navBarCategoriesDisplay();
                         echo "<li><a href='about.php'>ABOUT</a></li>";
+                        echo "<li><a href='registration.php'>REGISTRATION</a></li>";
                         echo "<li><a href='admin'>ADMIN</a></li>";
 
                     ?>  
