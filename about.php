@@ -9,7 +9,7 @@
                     ABOUT
                     <small>stuff and things</small>
                 </h1> 
-
+                <?php include 'includes/contact.php'; ?>
             </div>
            <?php include 'includes/sidebar.php'; ?>
         </div>
