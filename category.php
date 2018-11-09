@@ -3,7 +3,6 @@
     
     <?php include 'includes/nav.php'; ?>
 
-    <!-- Page Content -->
     <div class="container">
         <div class="row">
             <?php
@@ -17,18 +16,14 @@
                     $cat_title = $row["cat_title"];  
                     
                 }
-
             ?>
-            <!-- Blog Entries Column -->
+
             <div class="col-md-8">
                 <h1 class="page-header">
                     <?php echo $cat_title; ?>
                     <small>stuff and things</small>
                 </h1>
-
-                <!-- First Blog Post -->
-                <?php 
-
+                <?php
                     $query = "SELECT * FROM posts WHERE post_category_id = $category_id";
                     $select_all_posts_query = mysqli_query($connection, $query);
                         while($row = mysqli_fetch_assoc($select_all_posts_query)){

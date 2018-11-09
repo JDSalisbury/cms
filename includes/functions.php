@@ -1,9 +1,6 @@
 <?php include 'db.php';?>
 <?php
 
-
-
-
 function navBarCategoriesDisplay(){
     global $connection;
     $query = "SELECT * FROM categories";
@@ -15,10 +12,6 @@ function navBarCategoriesDisplay(){
     }
 
 }
-
-
-
-
 
 function tagSearchBar(){
     global $connection;
@@ -53,10 +46,6 @@ function tagSearchBar(){
     }
 }
 
-
-
-
-
 function displaySetupForPost($row){
     $post_id = $row['post_id'];
     $post_title = $row["post_title"];
@@ -65,8 +54,6 @@ function displaySetupForPost($row){
     $post_image = $row["post_image"];
     $post_content = substr($row["post_content"], 0, 200);
 
-    
-    
     echo "<h2><a href='/cms/post/$post_id'>{$post_title}</a></h2>
 
         <p class='lead'>by <a href='/cms/author/$post_author'>{$post_author}</a></p>
